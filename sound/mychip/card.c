@@ -8,7 +8,7 @@ static struct snd_timer_id tid = {
     .dev_class = SNDRV_TIMER_CLASS_GLOBAL,
     .dev_sclass = SNDRV_TIMER_SCLASS_APPLICATION
 
-}
+};
 
 static u32 timer_interval;
 static void timer_func(struct snd_timer_instance *ti, unsigned long ticks, unsigned long resolution)
@@ -66,7 +66,7 @@ static int timer_interval_set(void *data,u64 val)
 
 
 }
-DEFINE_DEBUGFS_ATTRIBUTE(timer_fops,timer_interval_get,timer_interval_set, "&lld\n");
+DEFINE_DEBUGFS_ATTRIBUTE(timer_fops,timer_interval_get,timer_interval_set, "&llu\n");
 static int __init mod_init(void)
 {
     int err;
